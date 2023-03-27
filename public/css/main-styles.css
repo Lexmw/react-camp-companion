@@ -1,0 +1,31 @@
+/* These are the main styles for the app, I
+will define the main color scheme and the background here */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,400;1,700&display=swap');
+/* colors:
+dark: 6B9080
+accent: A4C3B2
+hover: CCE3DE
+light: F6FFF8 */
+
+body{
+    background-color: #EAF4F4;
+    margin: 2%;
+    color: #3b3d40;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+body h1{
+  font-size: 2.8em;
+}
+
+body p{
+  font-size: 1.4em;
+}
+
+#links{
+  height: 50px;
+  margin: 0px 0px 0px 280px;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+}

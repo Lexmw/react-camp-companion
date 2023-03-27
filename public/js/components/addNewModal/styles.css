@@ -1,0 +1,40 @@
+#modal-body{
+  width: 60%;
+  max-width: 750px;
+  height: 65%;
+  /* max-height: 850px; */
+  padding: 4em;
+  border-radius: 5px;
+  background-color: #CCE3DE;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  text-align:center;
+}
+
+.modal-input-holder{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 45px auto;
+}
+
+.close-icon{
+  position: relative;
+  float: right;
+  left: 95%;
+  width: 50px;
+  cursor: pointer;
+}
+
+.latlng-container{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.error-message{
+  color: red;
+  border-radius: 5px;
+  padding: 5px;
+}

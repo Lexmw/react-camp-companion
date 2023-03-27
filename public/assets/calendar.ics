@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ddaysoftware.com//NONSGML DDay.iCal 1.0//EN
+BEGIN:VEVENT
+DESCRIPTION:Click here to view this event in your web browser http://cosivo
+ lunteers.volunteerhub.com/event/e9b408d1-34a8-45dc-8372-c900e9558a5e
+DTEND:20230327T170000Z
+DTSTAMP:20230105T040300Z
+DTSTART:20230327T133000Z
+SEQUENCE:0
+SUMMARY:Service Volunteer - AM
+UID:17469645
+URL:http://cosivolunteers.volunteerhub.com/event/e9b408d1-34a8-45dc-8372-c9
+ 00e9558a5e
+X-ALT-DESC;FMTTYPE=text/html:<HTML><HEAD><META HTTP-EQUIV="Content-Type" CO
+ NTENT="text/html\;charset=iso-8859-1"></HEAD><BODY><a href="http://cosivol
+ unteers.volunteerhub.com/event/e9b408d1-34a8-45dc-8372-c900e9558a5e">Click
+  here to view this event in your web browser</a><br/></BODY></HTML>
+BEGIN:VALARM
+ACTION:Display
+DESCRIPTION:Reminder
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+END:VCALENDAR
