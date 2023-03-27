@@ -7,7 +7,7 @@ import {
   Link,
   Routes
 } from "react-router-dom";
-import LoginPage from "./views/LoginPage/LogInPage";
+import LoginPage from "./views/Loginpage/LogInPage";
 import Dashboard from "./views/Dashboard/Dashboard";
 import SignUp from "./views/SignUp/SignUp";
 import theme from "./Theme";
