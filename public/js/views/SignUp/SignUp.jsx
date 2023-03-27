@@ -5,7 +5,7 @@ import InputWithIcon from '../../components/inputWithIcon';
 import SolidButton from '../../components/solidButton';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import SignUpContent from './style';
-import logo from '../../../assets/camp.png';
+import logo from '../../../assets/Camp.png';
 
 export default function SignUp() {
   const [username, setUsername] = useState('');
