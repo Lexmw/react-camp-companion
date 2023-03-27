@@ -5,7 +5,7 @@ import InputWithIcon from '../../components/inputWithIcon';
 import SolidButton from '../../components/solidButton';
 import OutlinedButton from '../../components/outlinedButton';
 import LoginPageContent from './style';
-import logo from '../../../assets/camp.png';
+import logo from '../../../assets/Camp.png';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
