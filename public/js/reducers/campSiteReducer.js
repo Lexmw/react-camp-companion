@@ -10,21 +10,9 @@ export default function campSitesReducer(state = initialState, action) {
       return tempState;
 
     case 'DELETE-SITE':
-      let newList = action.payload.currentState.filter(
-        x => x.id !== action.payload.siteID,
-      );
-
-      let newLS = action.payload.currentState.filter(
-        x => x.id !== action.payload.siteID,
-      );
-
-      // run through
-
-      localStorage.removeItem(campsites[action.payload.siteID]);
-
-
-      console.log('newlist?',newList)
-      return newList && newLS;
+      let newList = action.payload.currentState.filter(x => x.id !== action.payload.siteID);
+      localStorage.setItem("campSites", JSON.stringify(newList));
+      return newList;
 
     default:
       return state;
