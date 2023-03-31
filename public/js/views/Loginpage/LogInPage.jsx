@@ -75,7 +75,7 @@ export default function LoginPage() {
             <OutlinedButton
               color="neutral"
               innerText="Log In"
-              function={UserLogin}
+              function={() => navigate('/dashboard')}
             ></OutlinedButton>
           </div>
         </form>

@@ -96,7 +96,7 @@ export default function SignUp() {
             <SolidButton
               color="primary"
               innerText="Sign Up"
-              function={UserSignUp}
+              function={() => navigate('/dashboard')}
               fullWidth={true}
             ></SolidButton>
           </div>
