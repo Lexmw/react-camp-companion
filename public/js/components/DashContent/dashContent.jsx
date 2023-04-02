@@ -1,26 +1,28 @@
-import React, {useState, useEffect} from 'react';
-import {connect, useDispatch} from 'react-redux';
-import {GoogleApiWrapper} from 'google-maps-react';
-import {deleteCampSites, editCampSites} from '../../actions/campSitesActions';
-import DashContent from './styled';
-import SolidButton from '../solidButton';
-import AddNewModal from '../addNewModal/addNewModal';
-import Maps from '../map/map';
-import EditSiteView from '../EditView/editView';
-import CloseIcon from '@mui/icons-material/Close';
-import EditIcon from '@mui/icons-material/Edit';
-import Edit from '@mui/icons-material/Edit';
+import React, { useState, useEffect } from "react";
+import { connect, useDispatch } from "react-redux";
+import { GoogleApiWrapper } from "google-maps-react";
+import { deleteCampSites, editCampSites } from "../../actions/campSitesActions";
+import DashContent from "./styled";
+import SolidButton from "../solidButton";
+import AddNewModal from "../addNewModal/addNewModal";
+import Maps from "../map/map";
+import EditSiteView from "../EditView/editView";
+import CloseIcon from "@mui/icons-material/Close";
+import EditIcon from "@mui/icons-material/Edit";
 
-const DashMain = props => {
+const DashMain = (props) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [currentLatitude, setCurrentLatitude] = useState('');
-  const [currentLongitude, setCurrentLongitude] = useState('');
-  const [campData, setCampData] =useState([])
+  const [currentLatitude, setCurrentLatitude] = useState("");
+  const [currentLongitude, setCurrentLongitude] = useState("");
+  const [campData, setCampData] = useState([]);
 
-  const {campSitesReducer} = props;
+  const { campSitesReducer } = props;
   const dispatch = useDispatch();
 
-  console.log("dashcontent", campSitesReducer)
+  useEffect(() => {
+    getLocation();
+  }, []);
+
   useEffect(() => {
     setCampData(campSitesReducer);
   }, [campSitesReducer.length]);
@@ -35,22 +37,29 @@ const DashMain = props => {
   };
 
   //These functions can grab the users location from html 5 api
-  function getLocation() {
+  const getLocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(showPosition);
     } else {
-      alert('Geolocation is not supported by this browser.');
+      alert("Geolocation is not supported by this browser.");
     }
-  }
+  };
 
-  function showPosition(position) {
+  const showPosition = (position) => {
     setCurrentLatitude(position.coords.latitude);
     setCurrentLongitude(position.coords.longitude);
-  }
+  };
 
-  useEffect(() => {
-    getLocation();
-  }, []);
+  const handleEdit = (id) => {
+    setCampData(
+      campData.map((listItem) => {
+        if (listItem.id == id) {
+          listItem.edit = !listItem.edit;
+        }
+        return listItem;
+      })
+    );
+  };
   ///////////////////////////////////////////////////////////////////
 
   return (
@@ -102,17 +111,28 @@ const DashMain = props => {
           </thead>
           <tbody>
             {(campSitesReducer && campData).map((site, index) => {
-              return (
-                <tr key={index}>
+              return site.edit === true ? (
+                <EditSiteView
+                  key={ site.id }
+                  id={ site.id }
+                  name={ site.name }
+                  datesOfStay={ site.datesOfStay }
+                  coordinates={ JSON.stringify(site.coordinates) }
+                  notes={ site.notes }
+                  currentState={ campData }
+                  handleSave={ editCampSites }
+                />
+              ) : (
+                <tr key={ index }>
                   <td>
-                    <> {site.name}</>
+                    <> { site.name }</>
                   </td>
-                  <td>{JSON.stringify(site.coordinates)}</td>
-                  <td>{site.datesOfStay}</td>
-                  <td>{site.notes}</td>
+                  <td>{ JSON.stringify(site.coordinates) }</td>
+                  <td>{ site.datesOfStay }</td>
+                  <td>{ site.notes }</td>
                   <td>
                     <>
-                      <EditIcon />
+                      <EditIcon onClick={() => handleEdit(site.id)} />
                       <CloseIcon
                         onClick={() =>
                           dispatch(deleteCampSites(campSitesReducer, site.id))
@@ -130,12 +150,12 @@ const DashMain = props => {
   );
 };
 
-const mapStateToProps = state => ({
-  campSitesReducer: state.campSitesReducer,
+const mapStateToProps = (state) => ({
+  campSitesReducer: state.campSitesReducer
 });
 
 export default connect(mapStateToProps)(
   GoogleApiWrapper({
-    apiKey: process.env.MAPS_API_KEY,
-  })(DashMain),
+    apiKey: process.env.MAPS_API_KEY
+  })(DashMain)
 );

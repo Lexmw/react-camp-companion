@@ -12,9 +12,9 @@ export const deleteCampSites = (currentState, siteID) => {
   };
 };
 
-export const editCampSites = (currentState, siteID) => {
+export const editCampSites = (currentState, siteID, name, datesOfStay, coordinates, notes) => {
   return {
     type: 'EDIT-SITE',
-    payload: {currentState: currentState, siteID: siteID},
+    payload: {currentState:currentState, siteID:siteID, editname:name, editdatesOfStay:datesOfStay, editedCoordinates:coordinates, editedNotes:notes},
   };
 };

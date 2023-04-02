@@ -31,6 +31,7 @@ const AddNewModal = props => {
           coordinates: {lat: latitude, lng: longitude},
           datesOfStay: datesOfStay,
           notes: notes,
+          edit: false,
         })
       );
       setErrorBgColor("transparent");
