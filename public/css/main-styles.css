@@ -35,3 +35,10 @@ body p{
   flex-direction: row;
   justify-content: space-around;
 }
+
+@media (max-width: 768px) {
+  button {
+  position: absolute !important;
+  top: 15px !important;
+  right: 30px !important;}
+}

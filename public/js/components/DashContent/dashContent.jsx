@@ -75,7 +75,7 @@ const DashMain = (props) => {
           <div>
             <h1>My Camp Companion</h1>
             <p>
-              Where you can save all the memories and locations for your
+              Save all the memories and locations for your
               favorite campsites!
             </p>
           </div>

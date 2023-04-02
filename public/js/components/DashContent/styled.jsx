@@ -18,11 +18,6 @@ const DashContent = styled.div`
     margin-bottom: 10px;
   }
 
-  .heading p {
-    /* color: rgb(75, 72, 72); */
-    /* font-size: 0.8rem; */
-  }
-
   .cards {
     display: inline-flex;
     overflow: auto;
@@ -142,6 +137,10 @@ const DashContent = styled.div`
     background-color: #b9b5b5;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    table-layout: fixed;
+    border-collapse: collapse;
+    word-wrap: break-word;
+  
 
     thead {
       th {
@@ -177,6 +176,22 @@ const DashContent = styled.div`
   #content-area {
     margin-left: 0px;
   }
+  .heading {
+    margin-top: 50px;
+    width: 100%;
+    display: block;
+  }
+
+  .heading h1 {
+    font-size: 1.4em;
+    text-align: center;
+  }
+
+  .heading p {
+    font-size: .9em;
+    text-align: center;
+  }
+
   }
 `;
 export default DashContent;
