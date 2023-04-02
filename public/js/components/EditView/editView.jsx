@@ -23,15 +23,15 @@ const EditSiteView = (props) => {
   return (
     <tr>
       <td>
-        <input value={ inputValues.name } name="name" onChange={ handleOnChange }/>
+        <textarea class="editarea" value={ inputValues.name } name="name" onChange={ handleOnChange }/>
       </td>
       <td>
-        <input value={ inputValues.coordinates } name="coordinates" onChange={ handleOnChange }/>
+        <textarea class="editarea" value={ inputValues.coordinates } name="coordinates" onChange={ handleOnChange }/>
         </td>
       <td>
-        <input value={ inputValues.datesOfStay } name="datesOfStay" onChange={ handleOnChange }/>
+        <textarea class="editarea" value={ inputValues.datesOfStay } name="datesOfStay" onChange={ handleOnChange }/>
       </td>
-      <td><input value={ inputValues.notes } name="notes" onChange={ handleOnChange }/></td>
+      <td><textarea class="editarea" value={ inputValues.notes } name="notes" onChange={ handleOnChange }/></td>
       <td>
         <>
           <SaveIcon

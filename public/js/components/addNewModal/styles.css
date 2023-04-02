@@ -1,12 +1,10 @@
 #modal-body{
   width: 60%;
   max-width: 750px;
-  height: 65%;
-  /* max-height: 850px; */
   padding: 4em;
   border-radius: 5px;
   background-color: #CCE3DE;
-  margin: 100px auto;
+  margin: 50px auto;
   display: flex;
   flex-direction: column;
   text-align:center;
@@ -41,7 +39,6 @@
 
 @media(max-width: 768px) {
   #modal-body{
-    margin: 50px auto;
     width: 80vw;
     height: 90vh;
     padding: 2em
