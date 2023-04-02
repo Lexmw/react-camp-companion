@@ -79,7 +79,7 @@ const DashMain = (props) => {
               favorite campsites!
             </p>
           </div>
-          <div>
+          <div id="add-new">
             <SolidButton
               color="secondary"
               innerText="New Camp Site"

@@ -192,6 +192,11 @@ const DashContent = styled.div`
     text-align: center;
   }
 
+  #add-new {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+  }
   }
 `;
 export default DashContent;

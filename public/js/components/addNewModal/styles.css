@@ -38,3 +38,39 @@
   border-radius: 5px;
   padding: 5px;
 }
+
+@media(max-width: 768px) {
+  #modal-body{
+    margin: 50px auto;
+    width: 80vw;
+    height: 90vh;
+    padding: 2em
+  }
+
+  .modal-input-holder{
+    gap: 15px;
+    margin: 25px auto;
+  }
+
+  .modal-input-holder input {
+    font-size: 12px !important;
+    height: 10px;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  p {
+    font-size: .9em !important;
+  }
+
+  .latlng-container {
+    flex-direction: column-reverse !important;
+    gap: 10px !important;
+  }
+
+  .latlng-container button {
+    width: 100% !important;
+  }
+}
