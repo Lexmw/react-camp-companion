@@ -1,15 +1,21 @@
 import styled from 'styled-components';
 
 const SideMenuContent = styled.div`
-  #side-menu {
     background: #156064;
     width: 280px;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0px;
     bottom: 0;
-    height: 100vh;
+    height: 100%;
     padding: 15px 0px;
+
+  #ham-menu{
+    display:none;
+  }
+
+  #menu-close{
+    display: none;
   }
 
   nav {
@@ -82,21 +88,28 @@ a:hover {
     margin: 10px 0;
   }
 
-  .user-title {
-    display: block;
-    font-size: 0.8rem;
-    text-align: center;
-    margin: 10px 0;
-  }
+  @media (max-width: 768px) {
+    display: ${(props) => props.show ? 'block' : 'none'};
+    flex-direction: column;
+    z-index: 900;
 
-  .education {
-    font-size: 0.8rem;
-    display: inline-block;
-    color: lightgray;
-  }
+    #ham-menu{
+      display: block;
+      margin: 8px;
+      font-size: 90px;
+      color: black;
+      background: #156064;
+    }
 
-  .schools {
-    font-size: 0.8rem;
+    #menu-close {
+      display: block;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      margin: 8px;
+      color: black;
+      background: #156064;
+    }
   }
 `;
 

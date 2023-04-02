@@ -6,8 +6,14 @@ dark: 6B9080
 accent: A4C3B2
 hover: CCE3DE
 light: F6FFF8 */
+html {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
 
-body{
+body {
+    flex-grow: 1;
     background-color: #EAF4F4;
     margin: 2%;
     color: #3b3d40;

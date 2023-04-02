@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import SideMenuContent from "./style";
-import { useNavigate } from "react-router-dom";
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from "@mui/icons-material/Close";
 
-const Sidemenu = props => {
-  const { campSitesReducer } = props;
+const Sidemenu = ( props ) => {
+ const [show, setShow] = useState(false);
 
-  console.log(campSitesReducer);
   return (
-    <SideMenuContent>
-      <div id="side-menu">
+    <>
+    <MenuIcon id="ham-menu" onClick={ () => setShow(!show) }/>
+    <SideMenuContent show={ show }>
+        <CloseIcon id="menu-close" onClick={ () => setShow(!show) }/>
         <div className="card col-md-4">
           <div className="user-img"></div>
           <span className="user-name">John Doe </span>
@@ -17,32 +19,10 @@ const Sidemenu = props => {
 
         <nav>
           <a href="/">Log Out</a>
-          {/* <a href="#">
-             Account
-          </a> */}
         </nav>
-        {/* <div>
-          {campSitesReducer.map((site, index) => {
-            return (
-              <>
-                <a key={index}>{site.name}</a>
-                <>
-                  <EditIcon/>
-                  <CloseIcon
-                    onClick={() =>
-                      dispatch(deleteCampSites(campSitesReducer, site.id))
-                    }
-                  />
-                </>
-              </>
-            );
-          })}
-        </div> */}
-      </div>
     </SideMenuContent>
+    </>
   );
 };
-const mapStateToProps = state => ({
-  campSitesReducer: state.campSitesReducer,
-});
+
 export default Sidemenu;

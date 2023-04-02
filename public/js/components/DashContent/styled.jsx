@@ -172,5 +172,11 @@ const DashContent = styled.div`
     margin-bottom: 10px;
     border-radius: 5px;
   }
+
+  @media (max-width: 768px) {
+  #content-area {
+    margin-left: 0px;
+  }
+  }
 `;
 export default DashContent;
