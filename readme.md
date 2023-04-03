@@ -5,6 +5,8 @@ This app is a passion project that I created years ago when I was on the job hun
 
 v1 is not connected to handle the auth but in the next version auth with be implemented with an exteranl api.
 
+Visit the live version [here](https://camp-companion.netlify.app/)!
+
 ### To run this application locally follow these steps:
 1. Clone the project locally.
 
